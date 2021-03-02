@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
+/* ---------------------------------------------------
+    GLOBAL
+----------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, input, textarea, button {
+  font: 400 1rem Roboto, sans-serif;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+@media(max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+@media(max-width: 720px) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
+@media(max-width: 576px) {
+  .buttonCol {
+    padding-top: 2%;
+  }
+}
+
+/* ---------------------------------------------------
+    MAIN CONTAINER
+----------------------------------------------------- */
+.homeContainer {
+  padding-top: 4%;
+  padding-bottom: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+  background-color: #E5E6F0;
+  min-height: 100vh;
+  opacity: 1;
+  background-size: cover;
+  color: #fff;
+}
+
+/* ---------------------------------------------------
+    SEARCH GROUP
+----------------------------------------------------- */
+input.form-control.form-control-lg {
+  background-color: transparent;
+  color: #fcc20c;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #fcc20c;
+  outline: none;
+  border-radius: 10px;
+  height: 60px;
+  font-weight: 700;
+}
+
+.form-control:focus {
+  color: #7f858b;
+  background-color: #fff;
+  outline: 0;
+  font-weight: 400;
+}
+
+button.searchButton.btn.btn-primary {
+  background-color: #E74C3B;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 700;
+  width: 100%;
+}
+
+button.searchButton.btn.btn-primary:hover {
+  background-color: #b11402;
+}
+
+/* ---------------------------------------------------
+    TABLE
+----------------------------------------------------- */
+.searchRow {
+  padding-bottom: 2%;
+}
+
+.table-hover tbody tr:hover td {
+  background: #fae7e6;
+}
+
+.customTable .table-striped>thead {
+  background: #E74C3B;
+  color: #fcd2d0;
+}
+
+.customTable .table {
+  border-collapse: collapse;
+  border-radius: 6px;
+  border-left: 0px;
+  border-top: 0px;
+}
+.customTable .table > thead:first-child > tr:first-child > th {
+   border-bottom: 0px;
+}
+.customTable .table td, .customTable .table th {
+   border-left: 0px solid #ccc;
+   border-top: 0px solid #ccc;
+}
+.customTable .table > :first-child > :first-child > :first-child {
+   border-radius: 6px 0 0 0;
+}
+.customTable .table > :first-child > :first-child > :last-child {
+   border-radius: 0 6px 0 0;
+}
+.customTable .table > :last-child > :last-child > :first-child {
+   border-radius: 0 0 0 6px;
+}
+.customTable .table > :last-child > :last-child > :last-child {
+   border-radius: 0 0 6px 0;
+}
