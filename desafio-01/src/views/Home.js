@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import BootstrapTable from 'react-bootstrap-table-next'
-import { toast } from 'react-toastify'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import api from '../services/api'
 import '../styles/style.css'
 
@@ -61,6 +62,7 @@ export default function Home() {
                         >
                             Buscar
                         </Button>
+                        <ToastContainer />
                     </Col>
                 </Row>
                 <Row>
