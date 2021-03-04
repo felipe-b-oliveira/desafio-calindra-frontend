@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useRef} from 'react'
 import {Container, Row, Col, Form, Button} from 'react-bootstrap'
 import BootstrapTable from 'react-bootstrap-table-next'
-import {AsyncTypeahead} from 'react-bootstrap-typeahead'
+import {Typeahead, withAsync} from 'react-bootstrap-typeahead'
 import {ToastContainer, toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -9,11 +9,14 @@ import api from '../services/api'
 
 import '../styles/style.css'
 
+const AsyncTypeahead = withAsync(Typeahead)
+
 export default function Home() {
     const [text, setText] = useState('')
     const [products, setProducts] = useState('')
     const [suggestions, setSuggestions] = useState('')
     const [selectedSuggestion, setSelectedSuggestion] = useState('')
+    const typeaheadRef = useRef(null)
 
     useEffect(() => {
         if (selectedSuggestion.length > 0) {
@@ -72,6 +75,14 @@ export default function Home() {
         setText(value)
     }
 
+    const handleSearch = () => {
+        fetchSearchedProducts()
+        if (typeaheadRef.current !== null) {
+            typeaheadRef.current.clear()
+            setSelectedSuggestion('')
+        }
+    }
+
     const filterBy = () => true
 
     return (
@@ -81,34 +92,36 @@ export default function Home() {
                     <Col xs={12} sm={10}>
                         <Form.Group>
                             <AsyncTypeahead
-                                value={text}
                                 filterBy={filterBy}
                                 id='searchProductsInput'
                                 labelKey='term'
-                                minLength={3}
                                 onSearch={handleSuggestedSearch}
                                 options={Array.from(suggestions)}
                                 placeholder='Buscar produtos...'
                                 onChange={setSelectedSuggestion}
                                 selected={selectedSuggestion}
                                 renderMenuItemChildren={(option, props) => (
-                                    <span
-                                        style={{
-                                            color: 'black',
-                                            backgroundColor: 'white',
-                                            padding: '0px',
-                                        }}
-                                    >
+                                    <div className='suggestionsList'>
                                         {option.term}
-                                    </span>
+                                    </div>
                                 )}
+                                promptText={'Digite para buscar'}
+                                emptyLabel={
+                                    'Nenhuma correspondência encontrada'
+                                }
+                                onKeyDown={(e) => {
+                                    if (e.keyCode === 13) {
+                                        fetchSearchedProducts()
+                                    }
+                                }}
+                                ref={typeaheadRef}
                             />
                         </Form.Group>
                     </Col>
                     <Col className='buttonCol' xs={12} sm={2}>
                         <Button
                             className='searchButton'
-                            onClick={() => fetchSearchedProducts()}
+                            onClick={() => handleSearch()}
                         >
                             Buscar
                         </Button>
