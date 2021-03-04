@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import api from '../services/api'
 
 import '../styles/style.css'
+import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css'
 
 const AsyncTypeahead = withAsync(Typeahead)
 
@@ -39,15 +40,16 @@ export default function Home() {
     }
 
     const formatProductList = (unformatedList) => {
-        let teste = unformatedList.map((p) => {
+        let formatedList = unformatedList.map((p) => {
             const formatedProducts = {
                 id: p.id,
                 name: p.name,
                 visitsClickCount: p._meta.visitsClickCount,
+                score: Math.round(p._meta.score) / 10,
             }
             return formatedProducts
         })
-        return orderByVisitsClickCount(teste)
+        return orderByVisitsClickCount(formatedList)
     }
 
     async function fetchSuggestedProducts(inputValue) {
@@ -131,6 +133,7 @@ export default function Home() {
                 <Row>
                     <Col sm={12} className='customTable'>
                         <BootstrapTable
+                            bootstrap4
                             striped
                             hover
                             condensed
@@ -138,7 +141,20 @@ export default function Home() {
                             placeholder='Digite o nome do produto'
                             keyField='id'
                             data={products}
-                            columns={[{dataField: 'name', text: 'Produto'}]}
+                            columns={[
+                                {
+                                    dataField: 'name',
+                                    text: 'Produto',
+                                    headerClasses: 'productsColumn',
+                                },
+                                {
+                                    dataField: 'score',
+                                    text: 'Avaliação',
+                                    headerClasses: 'scoreColumnHeader',
+                                    classes: 'scoreColumn',
+                                    sort: true,
+                                },
+                            ]}
                             noDataIndication='Nenhuma informação encontrada'
                         ></BootstrapTable>
                     </Col>

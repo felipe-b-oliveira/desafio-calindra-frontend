@@ -86,6 +86,21 @@ button.searchButton.btn.btn-primary:hover {
 }
 
 /* ---------------------------------------------------
+    SUGGESTION LIST
+----------------------------------------------------- */
+
+.suggestionsList {
+  color: 'black';
+  background-color: 'white';
+  padding: '0px';
+}
+
+#searchProductsInput > a.dropdown-item:hover {
+  background-color: #E74C3B;
+  color: #fff;
+}
+
+/* ---------------------------------------------------
     TABLE
 ----------------------------------------------------- */
 .searchRow {
@@ -96,9 +111,22 @@ button.searchButton.btn.btn-primary:hover {
   background: #fae7e6;
 }
 
+.customTable .table > thead .productsColumn {
+  text-align: center;
+}
+
+.customTable .table > thead .scoreColumnHeader {
+  width: 9rem;
+  text-align: center;
+}
+
+.customTable .table .scoreColumn {
+  text-align: center;
+}
+
 .customTable .table-striped>thead {
   background: #E74C3B;
-  color: #fcd2d0;
+  color: #fff;
 }
 
 .customTable .table {
