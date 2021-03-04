@@ -1,20 +1,31 @@
-import React, { useState } from 'react'
-import { Container, Row, Col, Form, Button } from 'react-bootstrap'
+import React, {useEffect, useState} from 'react'
+import {Container, Row, Col, Form, Button} from 'react-bootstrap'
 import BootstrapTable from 'react-bootstrap-table-next'
-import { ToastContainer, toast } from 'react-toastify'
+import {AsyncTypeahead} from 'react-bootstrap-typeahead'
+import {ToastContainer, toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+
 import api from '../services/api'
+
 import '../styles/style.css'
 
 export default function Home() {
     const [text, setText] = useState('')
     const [products, setProducts] = useState('')
+    const [suggestions, setSuggestions] = useState('')
+    const [selectedSuggestion, setSelectedSuggestion] = useState('')
+
+    useEffect(() => {
+        if (selectedSuggestion.length > 0) {
+            setText(selectedSuggestion[0].term)
+        }
+    }, [selectedSuggestion])
 
     async function fetchSearchedProducts() {
         try {
             if (text && text.length >= 3) {
-                const query = text.toLocaleLowerCase()
-                const response = await api.get(`${query}&source=nanook`)
+                text.toLocaleLowerCase()
+                const response = await api.get(`${text}&source=nanook`)
                 setProducts(formatProductList(response.data.products))
             } else {
                 toast.warn('A busca deve conter mais de 3 caracteres')
@@ -36,14 +47,32 @@ export default function Home() {
         return orderByVisitsClickCount(teste)
     }
 
-    const orderByVisitsClickCount = (unorderedList) => {
-        const teste = unorderedList.sort((a, b) => {
-            return b.visitsClickCount - a.visitsClickCount
-        })
-        return teste
+    async function fetchSuggestedProducts(inputValue) {
+        try {
+            inputValue.toLocaleLowerCase()
+            const response = await api.get(`${inputValue}&source=nanook`)
+            const orderedSuggestionList = response.data.suggestions.sort(
+                (a, b) => a.term.localeCompare(b.term)
+            )
+            setSuggestions(orderedSuggestionList)
+        } catch (err) {
+            console.error(err)
+        }
     }
 
-    console.log(products)
+    const orderByVisitsClickCount = (unorderedList) => {
+        const orderedList = unorderedList.sort((a, b) => {
+            return b.visitsClickCount - a.visitsClickCount
+        })
+        return orderedList
+    }
+
+    const handleSuggestedSearch = (value) => {
+        fetchSuggestedProducts(value)
+        setText(value)
+    }
+
+    const filterBy = () => true
 
     return (
         <div className='homeContainer'>
@@ -51,11 +80,28 @@ export default function Home() {
                 <Row className='searchRow'>
                     <Col xs={12} sm={10}>
                         <Form.Group>
-                            <Form.Control
-                                type='text'
-                                placeholder='Buscar produtos'
+                            <AsyncTypeahead
                                 value={text}
-                                onChange={(e) => setText(e.target.value)}
+                                filterBy={filterBy}
+                                id='searchProductsInput'
+                                labelKey='term'
+                                minLength={3}
+                                onSearch={handleSuggestedSearch}
+                                options={Array.from(suggestions)}
+                                placeholder='Buscar produtos...'
+                                onChange={setSelectedSuggestion}
+                                selected={selectedSuggestion}
+                                renderMenuItemChildren={(option, props) => (
+                                    <span
+                                        style={{
+                                            color: 'black',
+                                            backgroundColor: 'white',
+                                            padding: '0px',
+                                        }}
+                                    >
+                                        {option.term}
+                                    </span>
+                                )}
                             />
                         </Form.Group>
                     </Col>
@@ -79,7 +125,7 @@ export default function Home() {
                             placeholder='Digite o nome do produto'
                             keyField='id'
                             data={products}
-                            columns={[{ dataField: 'name', text: 'Produto' }]}
+                            columns={[{dataField: 'name', text: 'Produto'}]}
                             noDataIndication='Nenhuma informação encontrada'
                         ></BootstrapTable>
                     </Col>
