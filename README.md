@@ -5,10 +5,10 @@
     <img src="/desafio-01/docs/images/icone.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Busca de produtos</h3>
+  <h3 align="center">Busca de produtos e Website</h3>
 
   <p align="center">
-    Projeto desafio de consumo de API de produtos
+    Projeto desafio de consumo de API de produtos e site web
     <br />
     <br />
     <a href="https://github.com/felipe-b-oliveira/desafio-calindra-frontend">Ver Demo</a>
@@ -32,11 +32,18 @@
 * [Contato](#contato)
 
 <!-- SOBRE O PROJETO -->
-## Sobre o Projeto
+## Sobre os Projetos
+### Busca de Produtos
 
-![Tela de pesquisa][main-screenshot]
+![Tela de pesquisa][busca-produtos]
 
-Projeto referente ao desafio de frontend da Calindra Tech. Projeto realizado em React o qual consiste de uma view de busca de produtos através do consumo de dados de uma api, o mesmo possui ordenação inicial ao carregar a lista de produtos, sugestão de itens digitados e filtro por 'produtos mais visitados' e 'produtos melhor avaliados'. 
+Projeto referente ao desafio de frontend da Calindra Tech. Projeto realizado em React o qual consiste de uma view de busca de produtos através do consumo de dados de uma api, o mesmo possui ordenação inicial ao carregar a lista de produtos, sugestão de itens digitados e filtro por 'produtos mais visitados' e 'produtos melhor avaliados'.
+
+### Site Zutterman
+
+![Zutterman][zutterman-desktop]
+
+Projeto de website baseado em layout, utilizando html semântico.
 
 ## Tecnologias
 
@@ -109,4 +116,5 @@ Feito por **Felipe Oliveira**
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[main-screenshot]: https://github.com/felipe-b-oliveira/desafio-calindra-frontend/blob/main/desafio-01/docs/images/busca-produtos-01.jpg?raw=true
+[busca-produtos]: https://github.com/felipe-b-oliveira/desafio-calindra-frontend/blob/main/desafio-01/docs/images/busca-produtos-01.jpg?raw=true
+[zutterman-desktop]: https://github.com/felipe-b-oliveira/desafio-calindra-frontend/blob/main/desafio-02/docs/zutterman_desktop.jpg?raw=true
