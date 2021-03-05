@@ -32,6 +32,9 @@ body, input, textarea, button {
   .buttonCol {
     padding-top: 2%;
   }
+  .filterButton {
+    padding-top: 2%;
+  }
 }
 
 /* ---------------------------------------------------
@@ -83,6 +86,43 @@ button.searchButton.btn.btn-primary {
 
 button.searchButton.btn.btn-primary:hover {
   background-color: #b11402;
+}
+
+.filterButton > button {
+  background-color: #E74C3B;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 700;
+  width: 100%;
+}
+
+.filterButton > button:hover {
+  background-color: #b11402;
+}
+
+.filterButton > .btn-primary:focus,
+.filterButton > .btn-primary.focus {
+  background-color: #b11402;
+  border: none;
+}
+
+.filterButton > button:not(:disabled):not(.disabled).active,
+.filterButton > button:not(:disabled):not(.disabled):active,
+.filterButton.show > .btn-primary.dropdown-toggle {
+  background-color: #b11402;
+  border: none;
+}
+
+.filterButton a.dropdown-item:active {
+  background-color: #b11402;
+  color: #fff;
+}
+
+.filterButton a.dropdown-item:hover {
+  background-color: #E74C3B;
+  color: #fff;
 }
 
 /* ---------------------------------------------------

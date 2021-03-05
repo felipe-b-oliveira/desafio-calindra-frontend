@@ -1,5 +1,13 @@
 import React, {useEffect, useState, useRef} from 'react'
-import {Container, Row, Col, Form, Button} from 'react-bootstrap'
+import {
+    Container,
+    Row,
+    Col,
+    Form,
+    Button,
+    Dropdown,
+    DropdownButton,
+} from 'react-bootstrap'
 import BootstrapTable from 'react-bootstrap-table-next'
 import {Typeahead, withAsync} from 'react-bootstrap-typeahead'
 import {ToastContainer, toast} from 'react-toastify'
@@ -44,12 +52,12 @@ export default function Home() {
             const formatedProducts = {
                 id: p.id,
                 name: p.name,
+                score: p._meta.score,
                 visitsClickCount: p._meta.visitsClickCount,
-                score: Math.round(p._meta.score) / 10,
             }
             return formatedProducts
         })
-        return orderByVisitsClickCount(formatedList)
+        return orderByScore(formatedList)
     }
 
     async function fetchSuggestedProducts(inputValue) {
@@ -65,11 +73,27 @@ export default function Home() {
         }
     }
 
-    const orderByVisitsClickCount = (unorderedList) => {
+    const orderByScore = (unorderedList) => {
         const orderedList = unorderedList.sort((a, b) => {
-            return b.visitsClickCount - a.visitsClickCount
+            return b.score - a.score
         })
         return orderedList
+    }
+
+    const filterByVisitsClick = () => {
+        let filterByVisitsClickList = products
+        filterByVisitsClickList.sort((a, b) => {
+            return b.visitsClickCount - a.visitsClickCount
+        })
+        setProducts(filterByVisitsClickList)
+    }
+
+    const filterByScore = () => {
+        let filterByScore = products
+        filterByScore.sort((a, b) => {
+            return b.score - a.score
+        })
+        setProducts(filterByScore)
     }
 
     const handleSuggestedSearch = (value) => {
@@ -91,15 +115,17 @@ export default function Home() {
         <div className='homeContainer'>
             <Container>
                 <Row className='searchRow'>
-                    <Col xs={12} sm={10}>
+                    <Col xs={12} sm={8}>
                         <Form.Group>
                             <AsyncTypeahead
                                 filterBy={filterBy}
                                 id='searchProductsInput'
                                 labelKey='term'
-                                onSearch={handleSuggestedSearch}
                                 options={Array.from(suggestions)}
-                                placeholder='Buscar produtos...'
+                                inputValue={text}
+                                onInputChange={(value) =>
+                                    handleSuggestedSearch(value)
+                                }
                                 onChange={setSelectedSuggestion}
                                 selected={selectedSuggestion}
                                 renderMenuItemChildren={(option, props) => (
@@ -107,20 +133,24 @@ export default function Home() {
                                         {option.term}
                                     </div>
                                 )}
+                                onKeyDown={(e) => {
+                                    if (e.keyCode === 13) {
+                                        fetchSearchedProducts()
+                                        typeaheadRef.current.clear()
+                                        setSelectedSuggestion('')
+                                        setText('')
+                                    }
+                                }}
+                                ref={typeaheadRef}
+                                placeholder='Buscar produtos...'
                                 promptText={'Digite para buscar'}
                                 emptyLabel={
                                     'Nenhuma correspondência encontrada'
                                 }
-                                onKeyDown={(e) => {
-                                    if (e.keyCode === 13) {
-                                        fetchSearchedProducts()
-                                    }
-                                }}
-                                ref={typeaheadRef}
                             />
                         </Form.Group>
                     </Col>
-                    <Col className='buttonCol' xs={12} sm={2}>
+                    <Col className='buttonCol' xs={12} sm={4} md={2}>
                         <Button
                             className='searchButton'
                             onClick={() => handleSearch()}
@@ -128,6 +158,26 @@ export default function Home() {
                             Buscar
                         </Button>
                         <ToastContainer />
+                    </Col>
+                    <Col className='filterCol' xs={12} sm={12} md={2}>
+                        <DropdownButton
+                            id='dropdown-basic-button'
+                            title='Filtrar: '
+                            className='filterButton'
+                        >
+                            <Dropdown.Item
+                                href='#/action-1'
+                                onSelect={filterByVisitsClick}
+                            >
+                                Mais procurados
+                            </Dropdown.Item>
+                            <Dropdown.Item
+                                href='#/action-2'
+                                onSelect={filterByScore}
+                            >
+                                Melhor avaliados
+                            </Dropdown.Item>
+                        </DropdownButton>
                     </Col>
                 </Row>
                 <Row>
@@ -146,13 +196,6 @@ export default function Home() {
                                     dataField: 'name',
                                     text: 'Produto',
                                     headerClasses: 'productsColumn',
-                                },
-                                {
-                                    dataField: 'score',
-                                    text: 'Avaliação',
-                                    headerClasses: 'scoreColumnHeader',
-                                    classes: 'scoreColumn',
-                                    sort: true,
                                 },
                             ]}
                             noDataIndication='Nenhuma informação encontrada'
