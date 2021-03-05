@@ -27,15 +27,14 @@
 * [Iniciando](#iniciando)
   * [Pre Requisitos](#pre-requisitos)
   * [Instalação](#instalação)
-* [Uso](#usage)
-* [Contribuição](#contributing)
+* [Contribuindo](#contribuindo)
 * [Licença](#licença)
 * [Contato](#contato)
 
 <!-- SOBRE O PROJETO -->
 ## Sobre o Projeto
 
-![screenshot](/docs/images/busca-produtos-02?raw=true)
+![Tela de pesquisa][main-screenshot]
 
 Projeto referente ao desafio de frontend da Calindra Tech. Projeto realizado em React o qual consiste de uma view de busca de produtos através do consumo de dados de uma api, o mesmo possui ordenação inicial ao carregar a lista de produtos, sugestão de itens digitados e filtro por 'produtos mais visitados' e 'produtos melhor avaliados'. 
 
@@ -72,10 +71,42 @@ yarn install
 yarn start
 ```
 
+<!-- CONTRIBUTING -->
+## Contribuindo
+
+Contribuições são muito bem vindas 😎.
+
+1. Faça Fork desse repositório;
+2. Crie uma branch com a sua feature: `git checkout -b feature/MinhaFeature`
+3. Commit suas mudanças: `git commit -m 'feat: Minha nova feature'`
+4. Push a sua branch: `git push origin feature/MinhaFeature`
+5. Abra uma Pull Request
+
+<!-- LICENÇA -->
+## Licença
+
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+<!-- CONTATO -->
+## Contato
+
+<p align="center">
+
+ <a href="https://twitter.com/FelipeOliveir9" target="_blank" >
+     <img alt="Twitter" src="https://img.shields.io/badge/-Twitter-9cf?style=flat-square&logo=Twitter&logoColor=white"></a>
+
+  <a href="https://www.linkedin.com/in/felipe-oliveira-417376100/" target="_blank" >
+    <img alt="Linkedin" src="https://img.shields.io/badge/-Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white"></a>
+
+  <a href="mailto:felipe.boliveira@outlook.com" alt="Gmail">
+    <img src="https://img.shields.io/badge/-felipe.boliveira@outlook.com-0078D4?style=flat-square&labelColor=0078D4&logo=gmail&logoColor=white&link=felipe.boliveira@outlook.com"/></a>
+
+</p>
+
 ---
 
 Feito por **Felipe Oliveira**
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-
+[main-screenshot]: https://github.com/felipe-b-oliveira/desafio-calindra-frontend/blob/main/docs/images/busca-produtos-01.jpg?raw=true
