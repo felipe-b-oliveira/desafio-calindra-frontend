@@ -1,14 +1,81 @@
-# Desafio Frontend Calindra
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/felipe-b-oliveira/desafio-calindra-frontend">
+    <img src="/docs/images/icone.png" alt="Logo" width="80" height="80">
+  </a>
 
-O desafio pode ser acessado através do repositório 'desafio-calindra-frontend'.
-Clone o repositório usando o comando abaixo:
+  <h3 align="center">Busca de produtos</h3>
 
+  <p align="center">
+    Projeto desafio de consumo de API de produtos
+    <br />
+    <br />
+    <a href="https://github.com/felipe-b-oliveira/desafio-calindra-frontend">View Demo</a>
+    ·
+    <a href="https://github.com/felipe-b-oliveira/desafio-calindra-frontend/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/felipe-b-oliveira/desafio-calindra-frontend/issues">Request Feature</a>
+  </p>
+</p>
+
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
+
+* [Sobre o Projeto](#sobre-o-projeto)
+  * [Tecnologias](#tecnologias)
+* [Iniciando](#iniciando)
+  * [Pre Requisitos](#pre-requisitos)
+  * [Instalação](#instalação)
+* [Uso](#usage)
+* [Contribuição](#contributing)
+* [Licença](#license)
+* [Contato](#contact)
+
+<!-- ABOUT THE PROJECT -->
+## Sobre o Projeto
+
+[![ScreenShot][product-screenshot]]
+
+Projeto referente ao desafio de frontend da Calindra Tech. Projeto realizado em React o qual consiste de uma view de busca de produtos através do consumo de dados de uma api, o mesmo possui ordenação inicial ao carregar a lista de produtos, sugestão de itens digitados e filtro por 'produtos mais visitados' e 'produtos melhor avaliados'. 
+
+## Tecnologias
+
+Lista de principais ferramentas utilizadas no projeto. 
+
+* [React](https://pt-br.reactjs.org/)
+* [React-Bootstrap](https://react-bootstrap.github.io/)
+* [Yarn](https://yarnpkg.com/)
+
+<!-- GETTING STARTED -->
+## Iniciando
+
+Instruções de como configurar e executar o projeto localmente.
+
+### Pre Requisitos
+
+O projeto utiliza o Yarn, você pode conferir como instalá-lo em seu sistema aqui:
+[Yarn Installation](https://classic.yarnpkg.com/en/docs/install/)
+
+### Instalação
+
+1. Clone o repositório usando o comando abaixo:
 ```sh
 git clone https://github.com/felipe-b-oliveira/desafio-calindra-frontend.git
 ```
-O projeto referente a pasta 'desafio-01' utiliza dependências para sua execução,  
-uma vez dentro da mesma, instale as dependências usando o comando:
-
+2. Acesse a pasta do repositório e dentro da mesma execute o comando: 
 ```sh
 yarn install
 ```
+3. Execute o comando abaixo para executar o projeto
+```sh
+yarn start
+```
+
+---
+
+Feito por **Felipe Oliveira**
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[product-screenshot]: /docs/images/busca-produtos-02.png
