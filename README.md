@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/felipe-b-oliveira/desafio-calindra-frontend">
-    <img src="/docs/images/icone.png" alt="Logo" width="80" height="80">
+    <img src="/desafio-01/docs/images/icone.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Busca de produtos</h3>
@@ -109,4 +109,4 @@ Feito por **Felipe Oliveira**
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[main-screenshot]: https://github.com/felipe-b-oliveira/desafio-calindra-frontend/blob/main/docs/images/busca-produtos-01.jpg?raw=true
+[main-screenshot]: https://github.com/felipe-b-oliveira/desafio-calindra-frontend/blob/main/desafio-01/docs/images/busca-produtos-01.jpg?raw=true
