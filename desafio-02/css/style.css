@@ -1,0 +1,254 @@
+/* ---------------------------------------------------
+    GLOBAL
+----------------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, input, textarea, button {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.row {
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ---------------------------------------------------
+    MEDIA QUERIES
+----------------------------------------------------- */
+
+
+
+/* ---------------------------------------------------
+    NAVBAR
+----------------------------------------------------- */
+
+.navbar {
+  background-color: #fff;
+}
+
+.navbar {
+  width: 100%;
+  max-width: 1440px;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0
+}
+
+.navbar-brand {
+  padding: 20px 20px 20px 53px;
+  display: flex;
+  flex-direction: row;
+}
+
+#logo {
+  width: 75px;
+}
+
+.title-container {
+  padding-left: 20px;
+}
+
+.first-name {
+  font-family: Roboto Condensed;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 41.2px;
+  line-height: 48px;
+  display: flex;
+  align-items: flex-end;
+  color: #846219;
+}
+
+.second-name {
+  font-family: Roboto Condensed;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16.2px;
+  line-height: 19px;
+  display: flex;
+  align-items: flex-end;
+  letter-spacing: 5.4px;
+  color: #846219;
+}
+
+#navbar-links a {
+  font-family: Roboto Condensed;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16.2px;
+  line-height: 19px;
+  display: flex;
+  align-items: flex-end;
+  letter-spacing: 5.4px;
+  color: #846219;
+  margin-right: 127px;
+  text-transform: uppercase;
+}
+
+#navbar-links a:last-child {
+  margin-right: 64px;
+}
+
+/* ---------------------------------------------------
+    UP SECTION
+----------------------------------------------------- */
+
+.up-section {
+  width: 1440px;
+  height: 1024px;
+  left: 0px;
+  top: 0px;
+  background-color: #E9E9E9;
+  color: #716565;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.up-section-container {
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.up-section-text {
+  font-family: Roboto Condensed;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 82.2px;
+  line-height: 96px;
+  color: #716565;
+}
+
+#upTape {
+  max-width: 682px;
+}
+
+/* ---------------------------------------------------
+    DOWN SECTION
+----------------------------------------------------- */
+
+.down-section {
+  width: 1440px;
+  height: 1024px;
+  left: 0px;
+  top: 1024px;
+  background-color: #506FA9;
+  color: #fff;
+  margin-left: auto;
+  margin-right: auto
+}
+
+.down-section-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.down-section-text-container {
+  position: absolute;
+  width: 484px;
+  height: 162px;
+  left: 370px;
+  top: 1473px;
+}
+
+.down-section-title {
+  font-family: Roboto Condensed;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 69.2px;
+  line-height: 81px;
+  color: #FFFFFF;
+  padding-bottom: 26px;
+}
+
+.down-section-text {
+  font-family: Roboto Condensed;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 48.2px;
+  line-height: 56px;
+  color: #FFFFFF;
+}
+
+#downTape {
+  position: absolute;
+  width: 1038px;
+  height: 670px;
+  left: 634px;
+  top: 1180px;
+  max-width: 1038px;
+}
+
+/* ---------------------------------------------------
+    FOOTER
+----------------------------------------------------- */
+
+.footer-container {
+  width: 1440px;
+  height: 226px;
+  left: 0px;
+  top: 2048px;
+  background-color: #E9E9E9;
+  color: #716565;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.follow {
+  padding-top: 47px;
+  padding-left: 151px;
+}
+
+.social-icons > img {
+  width: 43px;
+}
+
+.social-icons {
+  padding-right: 26px;
+}
+
+.contact {
+  padding-top: 47px;
+  padding-left: 260px;
+}
+
+.social-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-title {
+  font-family: Roboto Condensed;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 27.2px;
+  line-height: 32px;  
+  display: flex;
+  align-items: flex-end;  
+  color: #716565;
+  padding-bottom: 15px;
+}
+
+.footer-text {
+  font-family: Roboto Condensed;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16.2px;
+  line-height: 19px;
+  color: #716565;
+}
+
