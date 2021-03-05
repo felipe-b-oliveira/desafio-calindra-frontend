@@ -58,18 +58,18 @@ Lista de principais ferramentas utilizadas no projeto.
 
 Instruções de como configurar e executar o projeto localmente.
 
-### Pre Requisitos
+### Pre Requisitos 'desafio-01 - Busca de Produtos'
 
-O projeto utiliza o Yarn, você pode conferir como instalá-lo em seu sistema aqui:
+O projeto da pasta 'desafio-01' utiliza o Yarn, você pode conferir como instalá-lo em seu sistema aqui:
 [Yarn Installation](https://classic.yarnpkg.com/en/docs/install/)
 
-### Instalação
+### Instalação 'desafio-01 - Busca de Produtos'
 
 1. Clone o repositório usando o comando abaixo:
 ```sh
 git clone https://github.com/felipe-b-oliveira/desafio-calindra-frontend.git
 ```
-2. Acesse a pasta do repositório e dentro da mesma execute o comando: 
+2. Acesse a pasta 'desafio-01' e dentro da mesma execute o comando: 
 ```sh
 yarn install
 ```
@@ -77,6 +77,10 @@ yarn install
 ```sh
 yarn start
 ```
+
+### Execução 'desafio-02 - Website'
+
+Abra o arquivo html utilizando o seu navegador.
 
 <!-- CONTRIBUTING -->
 ## Contribuindo
