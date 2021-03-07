@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE-edge" />
 
     <title>Zutterman - Measure Tapes</title>
@@ -25,100 +25,97 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
   </head>
   <body>
-    <header>
-      <div class="container-fluid" id="nav-container">
-        <nav class="navbar navbar-expand-md">
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbar-links"
-            aria-controls="navbar-links"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <a class="navbar-brand">
-            <img id="logo" src="img/zutterman_logo.png" alt="Zuterman Logo" />
+    <header class="container header-container">
+      <nav class="navbar navbar-expand-sm">
+        <div class="navbar-flexDiv">
+          <div class="w-100 text-left">
+            <button
+              class="navbar-toggler custom-navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbar-site"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="custom-navbar-toggler-icon">
+                <span class="material-icons"> more_vert </span>
+              </span>
+            </button>
+          </div>
+          <div class="custom-navbar-brand mx-0">
+            <div>
+              <img
+                class="img-fluid"
+                id="logo"
+                src="img/zutterman_logo.png"
+                alt="Zuterman Logo"
+              />
+            </div>
             <div class="title-container">
               <div class="first-name">
                 <span>zutterman</span>
               </div>
               <div class="second-name">
-                <span>Messure Tapes</span>
+                <span>Meassure Tapes</span>
               </div>
             </div>
-          </a>
-          <div
-            class="collapse navbar-collapse justify-content-end"
-            id="navbar-links"
-          >
-            <div class="navbar-nav">
-              <a href="#" class="nav-item nav-link" id="about-menu">About Us</a>
-              <a href="#" class="nav-item nav-link" id="models-menu">Models</a>
-              <a href="#" class="nav-item nav-link" id="guarantee-menu"
-                >Guarantee</a
-              >
-            </div>
           </div>
-        </nav>
-      </div>
+          <span class="w-100 d-lg-none d-block"></span>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-site">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Models</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Guarantee</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </header>
 
     <main>
-      <section>
-        <div class="container-fluid">
-          <div class="up-section">
-            <div class="up-section-container">
-              <div class="up-section-text">
-                <div><span>Measuring</span></div>
-                <div><span>everything</span></div>
-              </div>
-              <div class="up-section-image">
-                <div>
-                  <img
-                    id="upTape"
-                    src="img/zutterman_tape01.png"
-                    alt="Zuterman Logo"
-                  />
+      <section class="container">
+        <div class="row">
+          <div class="col px-0">
+            <div class="up-section">
+              <div class="up-section-container">
+                <div class="up-section-text">
+                  <div><span>Measuring</span></div>
+                  <div><span>everything</span></div>
+                </div>
+                <div class="up-section-image">
+                  <div class="uptape-container">
+                    <img
+                      id="uptape"
+                      class="img-fluid"
+                      src="img/zutterman_tape01.png"
+                      alt="Zuterman Logo"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section>
-        <div class="container-fluid">
-          <div class="down-section">
-            <div class="down-section-container">
-              <div class="down-section-text-container">
-                <div class="down-section-title">
-                  <div><span>We are Leader</span></div>
-                  <div><span>in Measure Tapes</span></div>
-                </div>
-                <div class="down-section-text">
-                  <div><span>There are 5x the</span></div>
-                  <div><span>circumference of planet</span></div>
-                  <div><span>earth in metric tapes</span></div>
-                </div>
-              </div>
-              <div class="down-section-image">
-                <img
-                  id="downTape"
-                  src="img/zutterman_tape02.png"
-                  alt="Zuterman Logo"
-                />
-              </div>
-            </div>
+      <section class="container">
+        <div class="row">
+          <div class="col px-0">
+            <div style="background-color: #506fa9; min-height: 50px"></div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer>
-      <div class="container-fluid">
-        <div class="footer-container">
+    <footer class="container footer-container">
+      <div class="row footer-row">
+        <div class="col-lg-4 col-md-5 col-sm-6 px-0 follow-col">
           <div class="follow">
             <div class="footer-title">Follow Us</div>
             <div class="social-container">
@@ -133,6 +130,8 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="col col-sm-4 px-0">
           <div class="contact">
             <div class="contact-text">
               <div class="footer-title">Contact</div>
