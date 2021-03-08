@@ -214,11 +214,11 @@ header.container {
   }
 
   #navbar-site ul.navbar-nav li:not(:last-child) {
-    margin-right: 2vw;
+    margin-right: 0.5vw;
   }
 
   #navbar-site ul.navbar-nav li:last-child {
-    margin-right: 0.5vw;
+    margin-right: 0;
   }
 
   div.up-section-container {
