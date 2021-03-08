@@ -35,15 +35,16 @@
 ## Sobre os Projetos
 ### Busca de Produtos
 
-![Tela de pesquisa][busca-produtos]
-
 Projeto referente ao desafio de frontend da Calindra Tech. Projeto realizado em React o qual consiste de uma view de busca de produtos através do consumo de dados de uma api, o mesmo possui ordenação inicial ao carregar a lista de produtos, sugestão de itens digitados e filtro por 'produtos mais visitados' e 'produtos melhor avaliados'.
 
-### Site Zutterman
+![Tela de pesquisa][busca-produtos]
 
-![Zutterman][zutterman-desktop]
 
-Projeto de website baseado em layout, utilizando html semântico.
+### Site Responsivo
+
+Projeto de website seguindo o layout proposto, utilizando html semântico e responsividade em vários tamanhos de telas.
+
+![Animação de site responsivo][zutterman-gif]
 
 ## Tecnologias
 
@@ -121,4 +122,4 @@ Feito por **Felipe Oliveira**
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [busca-produtos]: https://github.com/felipe-b-oliveira/desafio-calindra-frontend/blob/main/desafio-01/docs/images/busca-produtos-01.jpg?raw=true
-[zutterman-desktop]: https://github.com/felipe-b-oliveira/desafio-calindra-frontend/blob/main/desafio-02/docs/zutterman_desktop.jpg?raw=true
+[zutterman-gif]: https://github.com/felipe-b-oliveira/desafio-calindra-frontend/blob/main/desafio-02/docs/responsividade.gif?raw=true
